@@ -70,9 +70,22 @@ const NavBar = () => {
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
             <span>{t('about')}</span>
           </Link>
+          
+          {/* Join Now button moved to be with the menu items */}
+          <Button 
+            className="bg-darkAccent hover:bg-darkAccent/90 text-darkBg ml-2"
+            onClick={scrollToAppDownload}
+          >
+            <Settings className="h-4 w-4 mr-1 gear-spin" /> {t('joinNow')}
+          </Button>
         </div>
         
-        {/* Mobile Menu Toggle - keep the language selector on the left for mobile */}
+        {/* Language selector moved to the right side */}
+        <div className="hidden md:flex items-center">
+          <LanguageSelector />
+        </div>
+        
+        {/* Mobile - Both menu toggle and language selector */}
         <div className="flex md:hidden items-center gap-3">
           <LanguageSelector />
           <Button 
@@ -81,17 +94,6 @@ const NavBar = () => {
             className="text-darkText hover:text-darkAccent hover:bg-transparent"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
-        </div>
-        
-        {/* Desktop - Language selector and Join Button */}
-        <div className="hidden md:flex items-center gap-4">
-          <LanguageSelector />
-          <Button 
-            className="bg-darkAccent hover:bg-darkAccent/90 text-darkBg"
-            onClick={scrollToAppDownload}
-          >
-            <Settings className="h-4 w-4 mr-1 gear-spin" /> {t('joinNow')}
           </Button>
         </div>
       </div>
