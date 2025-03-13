@@ -38,7 +38,7 @@ const AppPromotion = () => {
               Leve o <span className="text-darkAccent">Biker's Way</span> com você
             </h2>
             <p className="text-darkText/80 mb-6 text-lg">
-              Tenha acesso a todas as rotas, dicas mecânicas e conecte-se com outros ciclistas mesmo quando estiver offline. Nossa aplicação está disponível para Android e iOS.
+              Tenha acesso a todas as rotas, dicas mecânicas e conecte-se com outros motociclistas mesmo quando estiver offline. Nossa aplicação está disponível para Android e iOS.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -76,7 +76,7 @@ const AppPromotion = () => {
                 <div className="w-8 h-8 rounded-full border-2 border-darkBg bg-darkMetal/30"></div>
               </div>
               <div>
-                <span className="font-semibold text-darkText">4.9/5</span> de avaliação por mais de 10 mil ciclistas
+                <span className="font-semibold text-darkText">4.9/5</span> de avaliação por mais de 10 mil motociclistas
               </div>
             </div>
           </div>

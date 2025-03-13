@@ -1,10 +1,10 @@
 
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { MapPin, Route, Clock, Compass, Settings, Bike, Mountain, Shield } from "lucide-react";
+import { MapPin, Route, Clock, Compass, Settings, Mountain, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-interface TrailCardProps {
+interface RouteCardProps {
   title: string;
   location: string;
   difficulty: string;
@@ -15,7 +15,7 @@ interface TrailCardProps {
   terrain?: string;
 }
 
-const TrailCard = ({ title, location, difficulty, distance, duration, imageUrl, elevation, terrain }: TrailCardProps) => {
+const RouteCard = ({ title, location, difficulty, distance, duration, imageUrl, elevation, terrain }: RouteCardProps) => {
   return (
     <Card className="overflow-hidden border-0 shadow-lg trail-card bg-darkCard hover:shadow-darkAccent/20 transition-shadow">
       <div className="relative h-52 overflow-hidden">
@@ -73,36 +73,36 @@ const TrailCard = ({ title, location, difficulty, distance, duration, imageUrl, 
 };
 
 const FeaturedTrails = () => {
-  const trails = [
+  const routes = [
     {
-      title: "Mechanical Mountain Ridge",
-      location: "Blue Mountains, CA",
+      title: "Mountain Pass Highway",
+      location: "Sierra Mountains, CA",
       difficulty: "Moderate",
-      distance: "12 km",
+      distance: "120 km",
       duration: "2-3 hours",
-      elevation: "450m",
-      terrain: "Technical",
-      imageUrl: "https://images.unsplash.com/photo-1465379944081-7f47de8d74ac?q=80&w=600&auto=format"
+      elevation: "1450m",
+      terrain: "Winding",
+      imageUrl: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=600&auto=format"
     },
     {
-      title: "Coastal Gear Path",
-      location: "Coastal Bay, OR",
+      title: "Coastal Highway One",
+      location: "Pacific Coast, OR",
       difficulty: "Easy",
-      distance: "8 km",
+      distance: "85 km",
       duration: "1-2 hours",
-      elevation: "120m",
+      elevation: "320m",
       terrain: "Smooth",
-      imageUrl: "https://images.unsplash.com/photo-1485833077593-4278bba3f11f?q=80&w=600&auto=format"
+      imageUrl: "https://images.unsplash.com/photo-1558981852-426c6c22a060?q=80&w=600&auto=format"
     },
     {
-      title: "Wilderness Engineering Track",
-      location: "National Forest, WA",
+      title: "Desert Canyon Route",
+      location: "Red Rock Canyon, NV",
       difficulty: "Difficult",
-      distance: "25 km",
-      duration: "5-6 hours",
+      distance: "190 km",
+      duration: "4-5 hours",
       elevation: "980m",
-      terrain: "Rocky",
-      imageUrl: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?q=80&w=600&auto=format"
+      terrain: "Technical",
+      imageUrl: "https://images.unsplash.com/photo-1508169351866-777fc0047ac5?q=80&w=600&auto=format"
     }
   ];
 
@@ -115,22 +115,22 @@ const FeaturedTrails = () => {
             <Route className="h-6 w-6 text-darkLeaf" />
             <Settings className="h-6 w-6 text-darkAccent gear-spin-reverse" />
           </div>
-          <h2 className="font-display font-bold text-3xl md:text-4xl mb-4 text-darkText">Featured <span className="text-darkAccent">Mechanical</span> Trails</h2>
+          <h2 className="font-display font-bold text-3xl md:text-4xl mb-4 text-darkText">Featured <span className="text-darkAccent">Motorcycle</span> Routes</h2>
           <p className="text-lg text-darkText/70 max-w-2xl mx-auto">
-            Discover our handpicked selection of the most breathtaking cycling trails, engineered for precision and maximum adventure for every skill level.
+            Discover our handpicked selection of the most breathtaking motorcycle routes, engineered for the perfect riding experience for every skill level.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {trails.map((trail, index) => (
-            <TrailCard key={index} {...trail} />
+          {routes.map((route, index) => (
+            <RouteCard key={index} {...route} />
           ))}
         </div>
         
         <div className="text-center mt-12">
           <Button className="bg-darkAccent hover:bg-darkAccent/90 text-darkBg font-medium px-8 flex items-center gap-2 mx-auto">
-            <Bike className="h-5 w-5" />
-            View All Trails
+            <Route className="h-5 w-5" />
+            View All Routes
           </Button>
         </div>
       </div>

@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Bike, Compass, Settings, Menu, X } from "lucide-react";
+import { Compass, Settings, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -13,7 +13,9 @@ const NavBar = () => {
       <div className="container max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
           <div className="relative">
-            <Bike className="h-8 w-8 text-darkAccent" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-motorcycle text-darkAccent">
+              <circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/><path d="M19 18.5V12a2 2 0 0 0-2-2h-2l-3.5-4a2 2 0 0 0-1.5-.7H6.2a2 2 0 0 0-1.8 1.2L3 11"/><path d="M5 18.5V4a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v13.5"/>
+            </svg>
             <Settings className="absolute -top-1 -right-1 h-4 w-4 text-darkAccent gear-spin opacity-70" />
           </div>
           <span className="font-display font-bold text-2xl text-darkAccent">Biker's Way</span>
@@ -27,7 +29,7 @@ const NavBar = () => {
           </Link>
           <Link to="/trails" className="font-medium text-darkText hover:text-darkAccent transition-colors flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-route"><path d="M3 8a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4 4 4 0 0 1-4 4H3Z"/><path d="M21 12a4 4 0 0 0-4-4h-2a4 4 0 0 0-4 4 4 4 0 0 0 4 4h8Z"/></svg>
-            <span>Trails</span>
+            <span>Routes</span>
           </Link>
           <Link to="/community" className="font-medium text-darkText hover:text-darkAccent transition-colors flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -74,7 +76,7 @@ const NavBar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-route"><path d="M3 8a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4 4 4 0 0 1-4 4H3Z"/><path d="M21 12a4 4 0 0 0-4-4h-2a4 4 0 0 0-4 4 4 4 0 0 0 4 4h8Z"/></svg>
-              <span>Trails</span>
+              <span>Routes</span>
             </Link>
             <Link 
               to="/community" 
