@@ -42,7 +42,7 @@ const HeroSection = () => {
               <span className="text-darkAccent">{t('heroHeading')}</span>
             </h1>
             <p className="text-lg md:text-xl text-darkText/80 mb-8">
-              Join our community of passionate motorcyclists exploring breathtaking roads, sharing mechanical insights, and connecting with fellow riders who appreciate the perfect balance of engineering and freedom.
+              {t('heroParagraph')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/routes">

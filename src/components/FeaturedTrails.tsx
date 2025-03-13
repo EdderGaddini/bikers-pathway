@@ -125,9 +125,9 @@ const FeaturedTrails = () => {
             <Route className="h-6 w-6 text-darkLeaf" />
             <Settings className="h-6 w-6 text-darkAccent gear-spin-reverse" />
           </div>
-          <h2 className="font-display font-bold text-3xl md:text-4xl mb-4 text-darkText">Featured <span className="text-darkAccent">Motorcycle</span> Routes</h2>
+          <h2 className="font-display font-bold text-3xl md:text-4xl mb-4 text-darkText">{t('featuredRoutesHeading')}</h2>
           <p className="text-lg text-darkText/70 max-w-2xl mx-auto">
-            Discover our handpicked selection of the most breathtaking motorcycle routes, engineered for the perfect riding experience for every skill level.
+            {t('featuredRoutesDescription')}
           </p>
         </div>
         

@@ -1,7 +1,11 @@
+
 import React from "react";
 import { Route, Settings, Compass, Wrench, Mountain, Users, Award } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-16 px-6 md:px-10 bg-darkCard">
       <div className="container max-w-7xl mx-auto">
@@ -9,16 +13,14 @@ const AboutSection = () => {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Settings className="h-6 w-6 text-darkAccent gear-spin" />
-              <span className="text-darkAccent font-medium">OUR STORY</span>
+              <span className="text-darkAccent font-medium">{t('ourStory')}</span>
             </div>
-            <h2 className="font-display font-bold text-3xl md:text-4xl mb-6 text-darkText">About <span className="text-darkAccent">Biker's Ways</span></h2>
+            <h2 className="font-display font-bold text-3xl md:text-4xl mb-6 text-darkText">{t('aboutBikersWays')}</h2>
             <p className="text-lg text-darkText/70 mb-6">
-              Founded by a group of passionate motorcyclists and mechanical engineers, Biker's Ways was created to help fellow riders discover 
-              the perfect balance between mechanical precision and the freedom of the open road.
+              {t('aboutParagraph1')}
             </p>
             <p className="text-lg text-darkText/70 mb-6">
-              Our mission is to promote motorcycle culture as a technically rewarding lifestyle while building a 
-              supportive community that shares mechanical knowledge, route experiences, and the engineering joy of riding.
+              {t('aboutParagraph2')}
             </p>
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="flex items-start gap-3">
@@ -26,8 +28,8 @@ const AboutSection = () => {
                   <Settings className="h-5 w-5 text-darkAccent" />
                 </div>
                 <div>
-                  <h4 className="font-display font-semibold text-lg mb-1 text-darkText">Engineering Passion</h4>
-                  <p className="text-darkText/70 text-sm">Built by engineers for bikers</p>
+                  <h4 className="font-display font-semibold text-lg mb-1 text-darkText">{t('engineeringPassion')}</h4>
+                  <p className="text-darkText/70 text-sm">{t('engineeringPassionDesc')}</p>
                 </div>
               </div>
               
@@ -36,8 +38,8 @@ const AboutSection = () => {
                   <Route className="h-5 w-5 text-darkLeaf" />
                 </div>
                 <div>
-                  <h4 className="font-display font-semibold text-lg mb-1 text-darkText">Technical Routes</h4>
-                  <p className="text-darkText/70 text-sm">Precision routes for all levels</p>
+                  <h4 className="font-display font-semibold text-lg mb-1 text-darkText">{t('technicalRoutes')}</h4>
+                  <p className="text-darkText/70 text-sm">{t('technicalRoutesDesc')}</p>
                 </div>
               </div>
               
@@ -46,8 +48,8 @@ const AboutSection = () => {
                   <Wrench className="h-5 w-5 text-darkAccent" />
                 </div>
                 <div>
-                  <h4 className="font-display font-semibold text-lg mb-1 text-darkText">Mechanical Support</h4>
-                  <p className="text-darkText/70 text-sm">Expert motorcycle maintenance tips</p>
+                  <h4 className="font-display font-semibold text-lg mb-1 text-darkText">{t('mechanicalSupport')}</h4>
+                  <p className="text-darkText/70 text-sm">{t('mechanicalSupportDesc')}</p>
                 </div>
               </div>
               
@@ -56,8 +58,8 @@ const AboutSection = () => {
                   <Compass className="h-5 w-5 text-darkLeaf" />
                 </div>
                 <div>
-                  <h4 className="font-display font-semibold text-lg mb-1 text-darkText">Rider Guidance</h4>
-                  <p className="text-darkText/70 text-sm">Engineered for your journey</p>
+                  <h4 className="font-display font-semibold text-lg mb-1 text-darkText">{t('riderGuidance')}</h4>
+                  <p className="text-darkText/70 text-sm">{t('riderGuidanceDesc')}</p>
                 </div>
               </div>
             </div>
