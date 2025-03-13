@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Settings, Compass, Route, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import ScrollIndicator from "@/components/ScrollIndicator";
 
 const HeroSection = () => {
   const scrollToAppDownload = () => {
@@ -65,6 +66,9 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
+
+        {/* Add the scroll indicator */}
+        <ScrollIndicator showBelow={100} />
       </div>
       
       {/* Trail stats banner */}

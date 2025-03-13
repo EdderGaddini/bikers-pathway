@@ -1,7 +1,8 @@
 
 import React from "react";
-import { Mail, Instagram, Facebook, Twitter, Settings, Compass, Route, Heart } from "lucide-react";
+import { Mail, Instagram, Facebook, Twitter, Settings, Compass, Route, Heart, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   // Custom chopper motorcycle SVG icon
@@ -78,8 +79,8 @@ const Footer = () => {
               <li><a href="#" className="text-darkText/70 hover:text-darkAccent transition-colors flex items-center gap-1"><Settings className="h-4 w-4" /> Bike Maintenance</a></li>
               <li><a href="#" className="text-darkText/70 hover:text-darkAccent transition-colors flex items-center gap-1"><Route className="h-4 w-4" /> Route Maps</a></li>
               <li><a href="#" className="text-darkText/70 hover:text-darkAccent transition-colors flex items-center gap-1"><Compass className="h-4 w-4" /> Gear Reviews</a></li>
-              <li><a href="#" className="text-darkText/70 hover:text-darkAccent transition-colors flex items-center gap-1">
-                <ChopperIcon className="h-4 w-4" /> Technical Guides
+              <li><a href="#" onClick={(e) => { e.preventDefault(); scrollToAppDownload(); }} className="text-darkText/70 hover:text-darkAccent transition-colors flex items-center gap-1">
+                <ChopperIcon /> Technical Guides
               </a></li>
             </ul>
           </div>
