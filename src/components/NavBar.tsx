@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Compass, Settings, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -48,7 +49,7 @@ const NavBar = () => {
             <BikerIcon />
             <Settings className="absolute -top-1 -right-1 h-4 w-4 text-darkAccent gear-spin opacity-70" />
           </div>
-          <span className="font-display font-bold text-2xl text-darkAccent">Biker's Way</span>
+          <span className="font-display font-bold text-2xl text-darkAccent">Biker's Ways</span>
         </Link>
         
         {/* Desktop Menu */}

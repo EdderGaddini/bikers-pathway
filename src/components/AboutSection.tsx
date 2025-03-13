@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Route, Settings, Compass, Wrench, Mountain, Users, Award } from "lucide-react";
 
@@ -12,9 +11,9 @@ const AboutSection = () => {
               <Settings className="h-6 w-6 text-darkAccent gear-spin" />
               <span className="text-darkAccent font-medium">OUR STORY</span>
             </div>
-            <h2 className="font-display font-bold text-3xl md:text-4xl mb-6 text-darkText">About <span className="text-darkAccent">Biker's Way</span></h2>
+            <h2 className="font-display font-bold text-3xl md:text-4xl mb-6 text-darkText">About <span className="text-darkAccent">Biker's Ways</span></h2>
             <p className="text-lg text-darkText/70 mb-6">
-              Founded by a group of passionate motorcyclists and mechanical engineers, Biker's Way was created to help fellow riders discover 
+              Founded by a group of passionate motorcyclists and mechanical engineers, Biker's Ways was created to help fellow riders discover 
               the perfect balance between mechanical precision and the freedom of the open road.
             </p>
             <p className="text-lg text-darkText/70 mb-6">
@@ -74,7 +73,6 @@ const AboutSection = () => {
               <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-darkBg/50 to-transparent"></div>
             </div>
             
-            {/* Decorative gears */}
             <Settings className="absolute -top-6 -right-6 h-16 w-16 text-darkAccent/20 gear-spin" />
             <Settings className="absolute -bottom-6 -left-6 h-12 w-12 text-darkAccent/20 gear-spin-reverse" />
             

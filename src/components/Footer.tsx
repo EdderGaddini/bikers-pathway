@@ -45,7 +45,7 @@ const Footer = () => {
                 <ChopperIcon />
                 <Settings className="absolute -top-1 -right-1 h-3 w-3 text-darkAccent gear-spin opacity-70" />
               </div>
-              <span className="font-display font-bold text-xl text-darkAccent">Biker's Way</span>
+              <span className="font-display font-bold text-xl text-darkAccent">Biker's Ways</span>
             </div>
             <p className="text-darkText/70 mb-4">
               Discover the perfect balance between mechanical precision and freedom on the world's best motorcycle routes.
@@ -106,7 +106,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-darkMetal/30 mt-8 pt-6 text-center text-darkText/50 text-sm">
-          <p>© {new Date().getFullYear()} Biker's Way. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Biker's Ways. All rights reserved.</p>
         </div>
       </div>
     </footer>
