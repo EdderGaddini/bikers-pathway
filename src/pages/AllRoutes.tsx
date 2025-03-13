@@ -4,8 +4,8 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { MapPin, Route as RouteIcon, Clock, Mountain, Settings, Shield, Compass, Search, SlidersHorizontal, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { MapPin, Route as RouteIcon, Clock, Mountain, Settings, Shield, Compass, Search, SlidersHorizontal, X, ArrowLeft } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface RouteCardProps {
@@ -83,6 +83,7 @@ const RouteCard = ({ id, title, location, difficulty, distance, duration, imageU
 const AllRoutes = () => {
   const { t } = useLanguage();
   const [showFilters, setShowFilters] = useState(false);
+  const navigate = useNavigate();
 
   // Mock data - in a real app, this would come from an API
   const routes = [
@@ -164,6 +165,13 @@ const AllRoutes = () => {
             <div className="flex items-center justify-between gap-4 mb-6">
               <div>
                 <div className="flex items-center gap-2 mb-3">
+                  <Button 
+                    variant="ghost" 
+                    className="text-darkText hover:bg-darkMetal/20 p-2 mr-2"
+                    onClick={() => navigate(-1)}
+                  >
+                    <ArrowLeft className="h-5 w-5" />
+                  </Button>
                   <RouteIcon className="h-6 w-6 text-darkAccent" />
                   <Settings className="h-6 w-6 text-darkLeaf gear-spin" />
                 </div>
