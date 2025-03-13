@@ -1,7 +1,9 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { ModeToggle } from "@/components/mode-toggle";
 import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSelector from "@/components/LanguageSelector";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,10 +14,9 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Button } from "@/components/ui/button";
-import { Route, Settings } from "lucide-react";
 
 const NavBar = () => {
-  const { t, changeLanguage } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <div className="bg-darkBg border-b border-darkMetal/30 sticky top-0 z-50">
@@ -79,14 +80,7 @@ const NavBar = () => {
 
         <div className="flex items-center gap-4">
           <ModeToggle />
-          <select
-            className="bg-darkCard text-darkText border border-darkMetal/30 rounded-md py-1.5 px-2 text-sm focus:outline-none"
-            onChange={(e) => changeLanguage(e.target.value)}
-            defaultValue={localStorage.getItem('language') || 'en'}
-          >
-            <option value="en">English</option>
-            <option value="pt">Português</option>
-          </select>
+          <LanguageSelector />
         </div>
       </div>
     </div>

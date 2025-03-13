@@ -8,6 +8,7 @@ type LanguageContextType = {
   setLanguage: (lang: Language) => void;
   translations: Record<string, Record<string, string>>;
   t: (key: string) => string;
+  changeLanguage: (lang: string) => void;  // Added this method
 };
 
 // Default translations
@@ -48,6 +49,16 @@ const translations = {
     readyToJoin: 'Ready to join our growing biker community?',
     createAccountToday: 'Create your account today and connect with thousands of motorcycle enthusiasts, discover new routes, and share your riding experiences.',
     signUpNow: 'Sign Up Now',
+    featuredRoutes: 'Featured Routes',
+    discoverNewRoutes: 'Discover new exciting motorcycle routes',
+    allRoutes: 'All Routes',
+    exploreAllRoutes: 'Explore all available routes',
+    popularRoutes: 'Popular Routes',
+    findMostLoved: 'Find the most loved routes',
+    newlyAdded: 'Newly Added',
+    checkLatestRoutes: 'Check the latest routes',
+    loginRegister: 'Login / Register',
+    profile: 'Profile',
   },
   'pt-BR': {
     home: 'Início',
@@ -85,6 +96,16 @@ const translations = {
     readyToJoin: 'Pronto para se juntar à nossa crescente comunidade de motociclistas?',
     createAccountToday: 'Crie sua conta hoje e conecte-se com milhares de entusiastas de motocicletas, descubra novas rotas e compartilhe suas experiências de pilotagem.',
     signUpNow: 'Cadastre-se Agora',
+    featuredRoutes: 'Rotas em Destaque',
+    discoverNewRoutes: 'Descubra novas rotas emocionantes para motociclistas',
+    allRoutes: 'Todas as Rotas',
+    exploreAllRoutes: 'Explore todas as rotas disponíveis',
+    popularRoutes: 'Rotas Populares',
+    findMostLoved: 'Encontre as rotas mais amadas',
+    newlyAdded: 'Recém Adicionadas',
+    checkLatestRoutes: 'Confira as rotas mais recentes',
+    loginRegister: 'Login / Registrar',
+    profile: 'Perfil',
   }
 };
 
@@ -93,6 +114,7 @@ const LanguageContext = createContext<LanguageContextType>({
   setLanguage: () => {},
   translations,
   t: (key) => key,
+  changeLanguage: () => {}, // Added default implementation
 });
 
 export const useLanguage = () => useContext(LanguageContext);
@@ -100,24 +122,33 @@ export const useLanguage = () => useContext(LanguageContext);
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>('en');
   
-  // Check user's region on component mount
+  // Check user's preferred language or stored language on component mount
   useEffect(() => {
-    const checkUserRegion = async () => {
-      try {
-        // Use a simple geo-IP API to check if user is from Brazil
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-        
-        if (data.country_code === 'BR') {
-          setLanguage('pt-BR');
-        }
-      } catch (error) {
-        console.error('Error detecting user region:', error);
+    const storedLanguage = localStorage.getItem('language');
+    if (storedLanguage === 'pt-BR' || storedLanguage === 'en') {
+      setLanguage(storedLanguage);
+    } else {
+      // Check browser language
+      const browserLang = navigator.language;
+      if (browserLang.startsWith('pt')) {
+        setLanguage('pt-BR');
+        localStorage.setItem('language', 'pt-BR');
+      } else {
+        localStorage.setItem('language', 'en');
       }
-    };
-    
-    checkUserRegion();
+    }
   }, []);
+  
+  // Function to change language
+  const changeLanguage = (lang: string) => {
+    if (lang === 'pt' || lang === 'pt-BR') {
+      setLanguage('pt-BR');
+      localStorage.setItem('language', 'pt-BR');
+    } else {
+      setLanguage('en');
+      localStorage.setItem('language', 'en');
+    }
+  };
   
   // Translation function
   const t = (key: string): string => {
@@ -125,7 +156,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
   
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, translations, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, translations, t, changeLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
