@@ -8,14 +8,43 @@ import { useState } from "react";
 const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const scrollToAppDownload = () => {
+    const appSection = document.getElementById("app-download");
+    if (appSection) {
+      appSection.scrollIntoView({ behavior: "smooth" });
+      setMobileMenuOpen(false);
+    }
+  };
+
+  // Custom chopper motorcycle SVG icon
+  const ChopperIcon = () => (
+    <svg 
+      width="32" 
+      height="32" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      strokeWidth="2"
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className="text-darkAccent"
+    >
+      <path d="M20 16L15 16L3 16" stroke="currentColor" />
+      <circle cx="5" cy="19" r="3" stroke="currentColor" />
+      <circle cx="19" cy="19" r="3" stroke="currentColor" />
+      <path d="M7 19L17 19" stroke="currentColor" />
+      <path d="M15 15V12C15 10.6667 15 6 15 6C15 5.5 15 4 16 4H17C17.5 4 18 4.5 18 5C18 5.5 17.4022 6.56904 17 7C16.4826 7.56904 16 8 14 8" stroke="currentColor" />
+      <path d="M4.5 9.5L3.5 12L3.5 16" stroke="currentColor" />
+      <path d="M9.5 7.5L8.5 8.75V11.5L9.5 13L13 13" stroke="currentColor" />
+      <path d="M14 8L8 8" stroke="currentColor" />
+    </svg>
+  );
+
   return (
     <nav className="sticky top-0 z-50 bg-darkBg/90 backdrop-blur-sm py-4 px-6 md:px-10 shadow-md border-b border-darkMetal/30">
       <div className="container max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
           <div className="relative">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-motorcycle text-darkAccent">
-              <circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/><path d="M19 18.5V12a2 2 0 0 0-2-2h-2l-3.5-4a2 2 0 0 0-1.5-.7H6.2a2 2 0 0 0-1.8 1.2L3 11"/><path d="M5 18.5V4a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v13.5"/>
-            </svg>
+            <ChopperIcon />
             <Settings className="absolute -top-1 -right-1 h-4 w-4 text-darkAccent gear-spin opacity-70" />
           </div>
           <span className="font-display font-bold text-2xl text-darkAccent">Biker's Way</span>
@@ -53,7 +82,10 @@ const NavBar = () => {
         </div>
         
         {/* Join Button */}
-        <Button className="hidden md:flex bg-darkAccent hover:bg-darkAccent/90 text-darkBg">
+        <Button 
+          className="hidden md:flex bg-darkAccent hover:bg-darkAccent/90 text-darkBg"
+          onClick={scrollToAppDownload}
+        >
           <Settings className="h-4 w-4 mr-1 gear-spin" /> Join Now
         </Button>
       </div>
@@ -94,7 +126,10 @@ const NavBar = () => {
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
               <span>About</span>
             </Link>
-            <Button className="bg-darkAccent hover:bg-darkAccent/90 text-darkBg w-full justify-center">
+            <Button 
+              className="bg-darkAccent hover:bg-darkAccent/90 text-darkBg w-full justify-center"
+              onClick={scrollToAppDownload}
+            >
               <Settings className="h-4 w-4 mr-1 gear-spin" /> Join Now
             </Button>
           </div>

@@ -2,8 +2,16 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Settings, Compass, Route, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
+  const scrollToAppDownload = () => {
+    const appSection = document.getElementById("app-download");
+    if (appSection) {
+      appSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="relative overflow-hidden mechanical-bg bg-darkBg">
       {/* Decorative mechanical elements */}
@@ -40,11 +48,17 @@ const HeroSection = () => {
               Join our community of passionate motorcyclists exploring breathtaking roads, sharing mechanical insights, and connecting with fellow riders who appreciate the perfect balance of engineering and freedom.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-darkAccent hover:bg-darkAccent/90 text-darkBg font-semibold text-lg px-8 py-6 flex items-center gap-2">
-                <Route className="h-5 w-5" />
-                Explore Routes
-              </Button>
-              <Button variant="outline" className="border-darkText/30 text-darkText hover:bg-darkText/10 text-lg px-8 py-6 flex items-center gap-2">
+              <Link to="/trails">
+                <Button className="bg-darkAccent hover:bg-darkAccent/90 text-darkBg font-semibold text-lg px-8 py-6 flex items-center gap-2">
+                  <Route className="h-5 w-5" />
+                  Explore Routes
+                </Button>
+              </Link>
+              <Button 
+                variant="outline" 
+                className="border-darkText/30 text-darkText hover:bg-darkText/10 text-lg px-8 py-6 flex items-center gap-2"
+                onClick={scrollToAppDownload}
+              >
                 <Settings className="h-5 w-5 gear-spin" />
                 Join Biker Community
               </Button>

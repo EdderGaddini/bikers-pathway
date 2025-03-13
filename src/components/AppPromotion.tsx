@@ -13,8 +13,8 @@ const AppPromotion = () => {
   };
 
   return (
-    <section className="py-16 relative overflow-hidden mechanical-bg">
-      {/* Motorcycle background image */}
+    <section id="app-download" className="py-16 relative overflow-hidden mechanical-bg">
+      {/* Motorcycle background image - updated to show riders enjoying the journey */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1636500384161-574376b8ceb0?q=80&w=1800&auto=format" 
