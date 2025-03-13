@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type Language = 'en' | 'pt-BR';
@@ -59,6 +58,7 @@ const translations = {
     checkLatestRoutes: 'Check the latest routes',
     loginRegister: 'Login / Register',
     profile: 'Profile',
+    heroHeading: 'Discover the Perfect Road for Your Journey',
   },
   'pt-BR': {
     home: 'Início',
@@ -106,6 +106,7 @@ const translations = {
     checkLatestRoutes: 'Confira as rotas mais recentes',
     loginRegister: 'Login / Registrar',
     profile: 'Perfil',
+    heroHeading: 'Descubra a Estrada Perfeita para Sua Jornada',
   }
 };
 

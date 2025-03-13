@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Settings, Compass, Route, MapPin } from "lucide-react";
@@ -38,7 +39,7 @@ const HeroSection = () => {
               <Route className="h-6 w-6 text-darkAccent" />
             </div>
             <h1 className="font-display font-bold text-4xl md:text-6xl text-darkText mb-4 leading-tight">
-              Discover the Perfect <span className="text-darkAccent">Mechanical Path</span> for Your Journey
+              <span className="text-darkAccent">{t('heroHeading')}</span>
             </h1>
             <p className="text-lg md:text-xl text-darkText/80 mb-8">
               Join our community of passionate motorcyclists exploring breathtaking roads, sharing mechanical insights, and connecting with fellow riders who appreciate the perfect balance of engineering and freedom.
