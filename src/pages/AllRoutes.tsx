@@ -166,11 +166,12 @@ const AllRoutes = () => {
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <Button 
-                    variant="ghost" 
-                    className="text-darkText hover:bg-darkMetal/20 p-2 mr-2"
+                    variant="outline" 
+                    className="border-darkAccent text-darkAccent hover:bg-darkAccent hover:text-darkBg flex items-center gap-2"
                     onClick={() => navigate(-1)}
                   >
-                    <ArrowLeft className="h-5 w-5" />
+                    <ArrowLeft className="h-4 w-4" />
+                    Back
                   </Button>
                   <RouteIcon className="h-6 w-6 text-darkAccent" />
                   <Settings className="h-6 w-6 text-darkLeaf gear-spin" />
