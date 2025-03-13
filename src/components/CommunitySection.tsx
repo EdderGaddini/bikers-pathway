@@ -69,9 +69,13 @@ const CommunitySection = () => {
         <div className="mb-16">
           <h3 className="font-display font-bold text-2xl text-center mb-8 text-bikerCharcoal">{t('communityPhotos')}</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="group relative overflow-hidden rounded-lg aspect-square community-photo">
-              <img src="https://images.unsplash.com/photo-1558981403-c5f9b913ffc0?w=600&auto=format" alt={t('mountainRoadTrip')} className="w-full h-full object-cover transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-3 photo-overlay">
+            <div className="group relative overflow-hidden rounded-lg aspect-square">
+              <img 
+                src="https://images.unsplash.com/photo-1558981403-c5f9b913ffc0?w=600&auto=format&fit=crop&q=80" 
+                alt={t('mountainRoadTrip')} 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
                 <p className="text-white font-medium">{t('mountainRoadTrip')}</p>
                 <div className="flex items-center gap-3 text-white/80 text-sm">
                   <div className="flex items-center gap-1"><Heart size={14} /> 124</div>
@@ -80,9 +84,13 @@ const CommunitySection = () => {
               </div>
             </div>
             
-            <div className="group relative overflow-hidden rounded-lg aspect-square community-photo">
-              <img src="https://images.unsplash.com/photo-1596429402670-3b5d3d2c6156?w=600&auto=format" alt={t('weekendGroupRide')} className="w-full h-full object-cover transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-3 photo-overlay">
+            <div className="group relative overflow-hidden rounded-lg aspect-square">
+              <img 
+                src="https://images.unsplash.com/photo-1596429402670-3b5d3d2c6156?w=600&auto=format&fit=crop&q=80" 
+                alt={t('weekendGroupRide')} 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
                 <p className="text-white font-medium">{t('weekendGroupRide')}</p>
                 <div className="flex items-center gap-3 text-white/80 text-sm">
                   <div className="flex items-center gap-1"><Heart size={14} /> 98</div>
@@ -91,9 +99,13 @@ const CommunitySection = () => {
               </div>
             </div>
             
-            <div className="group relative overflow-hidden rounded-lg aspect-square community-photo">
-              <img src="https://images.unsplash.com/photo-1545974452-caa213f76132?w=600&auto=format" alt={t('sunsetRide')} className="w-full h-full object-cover transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-3 photo-overlay">
+            <div className="group relative overflow-hidden rounded-lg aspect-square">
+              <img 
+                src="https://images.unsplash.com/photo-1545974452-caa213f76132?w=600&auto=format&fit=crop&q=80" 
+                alt={t('sunsetRide')} 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
                 <p className="text-white font-medium">{t('sunsetRide')}</p>
                 <div className="flex items-center gap-3 text-white/80 text-sm">
                   <div className="flex items-center gap-1"><Heart size={14} /> 156</div>
@@ -102,9 +114,13 @@ const CommunitySection = () => {
               </div>
             </div>
             
-            <div className="group relative overflow-hidden rounded-lg aspect-square community-photo">
-              <img src="https://images.unsplash.com/photo-1566860338389-78097bbef5fe?w=600&auto=format" alt={t('maintenanceDay')} className="w-full h-full object-cover transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-3 photo-overlay">
+            <div className="group relative overflow-hidden rounded-lg aspect-square">
+              <img 
+                src="https://images.unsplash.com/photo-1566860338389-78097bbef5fe?w=600&auto=format&fit=crop&q=80" 
+                alt={t('maintenanceDay')} 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
                 <p className="text-white font-medium">{t('maintenanceDay')}</p>
                 <div className="flex items-center gap-3 text-white/80 text-sm">
                   <div className="flex items-center gap-1"><Heart size={14} /> 87</div>
@@ -114,7 +130,7 @@ const CommunitySection = () => {
             </div>
           </div>
           <div className="flex justify-center mt-6">
-            <Button variant="outline" className="border-gray-400 gap-2">
+            <Button variant="outline" className="border-gray-400 gap-2 hover:bg-gray-100">
               <Image size={18} />
               {t('viewMorePhotos')}
             </Button>
