@@ -1,3 +1,4 @@
+
 # Welcome to your Lovable project
 
 ## Project info
@@ -60,9 +61,53 @@ This project is built with .
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## How to deploy to GitHub Pages
 
-Simply open [Lovable](https://lovable.dev/projects/81b12d93-39a5-422d-868e-8fe96bc974a5) and click on Share -> Publish.
+Follow these steps to deploy your project to GitHub Pages:
+
+1. Push your code to a GitHub repository
+2. Go to your repository on GitHub
+3. Click on "Settings" tab
+4. Scroll down to "GitHub Pages" section
+5. Under "Source", select "GitHub Actions"
+6. Create a new file in your repository at `.github/workflows/deploy.yml` with the following content:
+
+```yml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: GITHUB_PAGES=true npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
+```
+
+7. Commit this file to your repository
+8. GitHub Actions will automatically build and deploy your site
+9. Your site will be available at `https://[your-username].github.io/bikers-way/`
 
 ## I want to use a custom domain - is that possible?
 
