@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Compass, Settings, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,8 +18,8 @@ const NavBar = () => {
     }
   };
 
-  // Custom chopper motorcycle SVG icon
-  const ChopperIcon = () => (
+  // Better motorcycle icon - more modern and cleaner
+  const BikerIcon = () => (
     <svg 
       width="32" 
       height="32" 
@@ -31,14 +30,13 @@ const NavBar = () => {
       strokeLinejoin="round" 
       className="text-darkAccent"
     >
-      <path d="M20 16L15 16L3 16" stroke="currentColor" />
-      <circle cx="5" cy="19" r="3" stroke="currentColor" />
-      <circle cx="19" cy="19" r="3" stroke="currentColor" />
-      <path d="M7 19L17 19" stroke="currentColor" />
-      <path d="M15 15V12C15 10.6667 15 6 15 6C15 5.5 15 4 16 4H17C17.5 4 18 4.5 18 5C18 5.5 17.4022 6.56904 17 7C16.4826 7.56904 16 8 14 8" stroke="currentColor" />
-      <path d="M4.5 9.5L3.5 12L3.5 16" stroke="currentColor" />
-      <path d="M9.5 7.5L8.5 8.75V11.5L9.5 13L13 13" stroke="currentColor" />
-      <path d="M14 8L8 8" stroke="currentColor" />
+      <path d="M5 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" />
+      <path d="M17 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" />
+      <path d="M5 17h12" stroke="currentColor" />
+      <path d="M7 13h7" stroke="currentColor" />
+      <path d="M15 8v5l-4-5H8.5" stroke="currentColor" />
+      <path d="M5 8v1" stroke="currentColor" />
+      <path d="M7.5 5.5A.5.5 0 0 1 8 5h3.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H11l-2 2" stroke="currentColor" />
     </svg>
   );
 
@@ -47,7 +45,7 @@ const NavBar = () => {
       <div className="container max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
           <div className="relative">
-            <ChopperIcon />
+            <BikerIcon />
             <Settings className="absolute -top-1 -right-1 h-4 w-4 text-darkAccent gear-spin opacity-70" />
           </div>
           <span className="font-display font-bold text-2xl text-darkAccent">Biker's Way</span>
@@ -73,7 +71,7 @@ const NavBar = () => {
           </Link>
         </div>
         
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle - keep the language selector on the left for mobile */}
         <div className="flex md:hidden items-center gap-3">
           <LanguageSelector />
           <Button 
