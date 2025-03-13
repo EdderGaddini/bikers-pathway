@@ -2,14 +2,13 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface ScrollIndicatorProps {
   showBelow?: number;
 }
 
 const ScrollIndicator = ({ showBelow = 100 }: ScrollIndicatorProps) => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   
   useEffect(() => {
     if (typeof window !== 'undefined') {
