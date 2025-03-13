@@ -28,10 +28,13 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: GITHUB_PAGES=true npm run build
+        run: npm run build
+        env:
+          BASE_PATH: ./
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
           branch: gh-pages
+          clean: true

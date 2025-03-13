@@ -7,7 +7,7 @@
     <title>Biker's Way - Discover Your Perfect Cycling Path</title>
     <meta name="description" content="Discover the best cycling trails and connect with fellow biking enthusiasts at Biker's Way" />
     <meta name="author" content="Biker's Way" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="./og-image.png" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap">
     <!-- Fix for GitHub Pages SPA routing -->
     <script type="text/javascript">
@@ -15,12 +15,13 @@
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
       (function(l) {
+        // This is an adapted version of the SPA redirect script
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
           window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
+              l.pathname + decoded + l.hash
           );
         }
       }(window.location))
@@ -31,6 +32,6 @@
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
