@@ -15,6 +15,10 @@ import Profile from "./pages/Profile";
 
 const queryClient = new QueryClient();
 
+// Verifica se estamos no GitHub Pages
+const isGitHubPages = window.location.hostname.includes('github.io');
+const basename = isGitHubPages ? '/bikers-pathway' : '/';
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
@@ -22,7 +26,7 @@ const App = () => (
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter basename={basename}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/routes" element={<AllRoutes />} />
