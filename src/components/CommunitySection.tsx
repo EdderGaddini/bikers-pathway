@@ -1,8 +1,7 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, Users, Award, Heart, MessageSquare, Image } from "lucide-react";
+import { Calendar, Users, Award, Heart, MessageSquare, Image, Map } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const CommunitySection = () => {
@@ -71,10 +70,15 @@ const CommunitySection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="group relative overflow-hidden rounded-lg aspect-square">
               <img 
-                src="https://images.unsplash.com/photo-1558981403-c5f9b913ffc0?w=600&auto=format&fit=crop&q=80" 
+                src="https://images.unsplash.com/photo-1558981403-c5f9b913ffc0?w=600&h=600&auto=format&fit=crop&q=80" 
                 alt={t('mountainRoadTrip')} 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
                 loading="lazy"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null;
+                  target.src = "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&h=600&auto=format&fit=crop&q=80";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
                 <p className="text-white font-medium">{t('mountainRoadTrip')}</p>
@@ -87,10 +91,15 @@ const CommunitySection = () => {
             
             <div className="group relative overflow-hidden rounded-lg aspect-square">
               <img 
-                src="https://images.unsplash.com/photo-1596429402670-3b5d3d2c6156?w=600&auto=format&fit=crop&q=80" 
+                src="https://images.unsplash.com/photo-1596429402670-3b5d3d2c6156?w=600&h=600&auto=format&fit=crop&q=80" 
                 alt={t('weekendGroupRide')} 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
                 loading="lazy"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null;
+                  target.src = "https://images.unsplash.com/photo-1588636142475-a62d56692870?w=600&h=600&auto=format&fit=crop&q=80";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
                 <p className="text-white font-medium">{t('weekendGroupRide')}</p>
@@ -103,10 +112,15 @@ const CommunitySection = () => {
             
             <div className="group relative overflow-hidden rounded-lg aspect-square">
               <img 
-                src="https://images.unsplash.com/photo-1545974452-caa213f76132?w=600&auto=format&fit=crop&q=80" 
+                src="https://images.unsplash.com/photo-1545974452-caa213f76132?w=600&h=600&auto=format&fit=crop&q=80" 
                 alt={t('sunsetRide')} 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
                 loading="lazy"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null;
+                  target.src = "https://images.unsplash.com/photo-1558981359-219d6364c9c8?w=600&h=600&auto=format&fit=crop&q=80";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
                 <p className="text-white font-medium">{t('sunsetRide')}</p>
@@ -119,10 +133,15 @@ const CommunitySection = () => {
             
             <div className="group relative overflow-hidden rounded-lg aspect-square">
               <img 
-                src="https://images.unsplash.com/photo-1566860338389-78097bbef5fe?w=600&auto=format&fit=crop&q=80" 
+                src="https://images.unsplash.com/photo-1566860338389-78097bbef5fe?w=600&h=600&auto=format&fit=crop&q=80" 
                 alt={t('maintenanceDay')} 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
                 loading="lazy"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null;
+                  target.src = "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=600&auto=format&fit=crop&q=80";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
                 <p className="text-white font-medium">{t('maintenanceDay')}</p>
@@ -141,7 +160,7 @@ const CommunitySection = () => {
           </div>
         </div>
         
-        <div className="mt-8 bg-bikerGreen rounded-lg overflow-hidden shadow-xl">
+        <div className="mt-8 bg-gradient-to-r from-bikerBrown to-bikerOrange rounded-lg overflow-hidden shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-8 md:p-12 flex flex-col justify-center">
               <h3 className="font-display font-bold text-2xl md:text-3xl text-white mb-4">
@@ -151,12 +170,18 @@ const CommunitySection = () => {
                 {t('createAccountToday')}
               </p>
               <div>
-                <Button className="bg-white text-bikerGreen hover:bg-white/90 font-semibold">
+                <Button className="bg-white text-bikerBrown hover:bg-white/90 font-semibold">
                   {t('signUpNow')}
                 </Button>
               </div>
             </div>
-            <div className="hidden md:block bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558981403-c5f9b913ffc0?q=80&w=800&auto=format')" }}>
+            <div className="relative hidden md:block">
+              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1619771914272-e3c1f8c4afdb?w=800&auto=format')" }}></div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="bg-black/30 p-6 rounded-lg backdrop-blur-sm">
+                  <Map className="h-24 w-24 text-white" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
