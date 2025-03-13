@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { ModeToggle } from "@/components/mode-toggle";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSelector from "@/components/LanguageSelector";
 import {
@@ -22,7 +22,7 @@ const NavBar = () => {
     <div className="bg-darkBg border-b border-darkMetal/30 sticky top-0 z-50">
       <div className="container max-w-7xl py-3 px-6 md:px-10 flex items-center justify-between">
         <Link to="/" className="font-display font-bold text-2xl text-darkText">
-          Moto<span className="text-darkAccent">Routes</span>
+          Riders<span className="text-darkAccent">Ways</span>
         </Link>
 
         <NavigationMenu>
@@ -81,6 +81,33 @@ const NavBar = () => {
         <div className="flex items-center gap-4">
           <ModeToggle />
           <LanguageSelector />
+        </div>
+      </div>
+      
+      {/* Section buttons */}
+      <div className="container max-w-7xl px-6 md:px-10 pb-2">
+        <div className="flex space-x-2 overflow-x-auto pb-1 hide-scrollbar">
+          <Button variant="outline" size="sm" className="border-darkMetal/30 bg-darkBg/70 text-darkText hover:text-darkAccent">
+            Cruisers
+          </Button>
+          <Button variant="outline" size="sm" className="border-darkMetal/30 bg-darkBg/70 text-darkText hover:text-darkAccent">
+            Sport Bikes
+          </Button>
+          <Button variant="outline" size="sm" className="border-darkMetal/30 bg-darkBg/70 text-darkText hover:text-darkAccent">
+            Touring
+          </Button>
+          <Button variant="outline" size="sm" className="border-darkMetal/30 bg-darkBg/70 text-darkText hover:text-darkAccent">
+            Adventure
+          </Button>
+          <Button variant="outline" size="sm" className="border-darkMetal/30 bg-darkBg/70 text-darkText hover:text-darkAccent">
+            Classics
+          </Button>
+          <Button variant="outline" size="sm" className="border-darkMetal/30 bg-darkBg/70 text-darkText hover:text-darkAccent">
+            Off-Road
+          </Button>
+          <Button variant="outline" size="sm" className="border-darkMetal/30 bg-darkBg/70 text-darkText hover:text-darkAccent">
+            Electric
+          </Button>
         </div>
       </div>
     </div>
