@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				bikerGreen: '#2B5329',
+				bikerBrown: '#8B5A2B',
+				bikerOrange: '#F4A261',
+				bikerCream: '#F9F7F3',
+				bikerCharcoal: '#333333',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +90,24 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'bike-move': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(300%)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'bike-ride': 'bike-move 15s linear infinite'
+			},
+			fontFamily: {
+				sans: ['"Inter"', 'sans-serif'],
+				display: ['"Montserrat"', 'sans-serif'],
+			},
+			backgroundImage: {
+				'hero-pattern': "url('https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1200&auto=format')",
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
