@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ScrollIndicatorProps {
   showBelow?: number;
@@ -9,6 +10,7 @@ interface ScrollIndicatorProps {
 
 const ScrollIndicator = ({ showBelow = 100 }: ScrollIndicatorProps) => {
   const [show, setShow] = useState(true);
+  const { t } = useLanguage();
   
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -62,7 +64,7 @@ const ScrollIndicator = ({ showBelow = 100 }: ScrollIndicatorProps) => {
       onClick={handleClick}
     >
       <div className="flex flex-col items-center cursor-pointer animate-bounce">
-        <span className="text-darkAccent text-sm font-medium mb-1">Explore More</span>
+        <span className="text-darkAccent text-sm font-medium mb-1">{t('exploreMore')}</span>
         <div className="bg-darkBg/50 backdrop-blur-md p-3 rounded-full shadow-lg border border-darkAccent/20 hover:bg-darkBg/70 transition-colors">
           <MotorcycleIcon />
           <ChevronDown className="h-5 w-5 text-darkAccent mt-1" />

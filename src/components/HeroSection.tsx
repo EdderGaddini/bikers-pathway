@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight, Settings, Compass, Route, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import ScrollIndicator from "@/components/ScrollIndicator";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   const scrollToAppDownload = () => {
     const appSection = document.getElementById("app-download");
     if (appSection) {
@@ -52,7 +55,7 @@ const HeroSection = () => {
               <Link to="/trails">
                 <Button className="bg-darkAccent hover:bg-darkAccent/90 text-darkBg font-semibold text-lg px-8 py-6 flex items-center gap-2">
                   <Route className="h-5 w-5" />
-                  Explore Routes
+                  {t('exploreRoutes')}
                 </Button>
               </Link>
               <Button 
@@ -61,7 +64,7 @@ const HeroSection = () => {
                 onClick={scrollToAppDownload}
               >
                 <Settings className="h-5 w-5 gear-spin" />
-                Join Biker Community
+                {t('joinCommunity')}
               </Button>
             </div>
           </div>
@@ -80,8 +83,8 @@ const HeroSection = () => {
                 <MapPin className="h-6 w-6 text-darkAccent" />
               </div>
               <div>
-                <p className="text-darkText/60 text-sm">Regions Covered</p>
-                <p className="text-darkText font-semibold text-lg">25+ Territories</p>
+                <p className="text-darkText/60 text-sm">{t('regionsTitle')}</p>
+                <p className="text-darkText font-semibold text-lg">{t('regionsCount')}</p>
               </div>
             </div>
             <div className="flex items-center gap-3 justify-center">
@@ -89,8 +92,8 @@ const HeroSection = () => {
                 <Route className="h-6 w-6 text-darkLeaf" />
               </div>
               <div>
-                <p className="text-darkText/60 text-sm">Road Collection</p>
-                <p className="text-darkText font-semibold text-lg">300+ Routes</p>
+                <p className="text-darkText/60 text-sm">{t('roadCollectionTitle')}</p>
+                <p className="text-darkText font-semibold text-lg">{t('roadCollectionCount')}</p>
               </div>
             </div>
             <div className="flex items-center gap-3 justify-center md:justify-end">
@@ -98,8 +101,8 @@ const HeroSection = () => {
                 <Settings className="h-6 w-6 text-darkAccent gear-spin" />
               </div>
               <div>
-                <p className="text-darkText/60 text-sm">Mechanical Tips</p>
-                <p className="text-darkText font-semibold text-lg">150+ Guides</p>
+                <p className="text-darkText/60 text-sm">{t('mechanicalTipsTitle')}</p>
+                <p className="text-darkText font-semibold text-lg">{t('mechanicalTipsCount')}</p>
               </div>
             </div>
           </div>
