@@ -7,6 +7,7 @@ import CommunitySection from "@/components/CommunitySection";
 import AboutSection from "@/components/AboutSection";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
+import AppPromotion from "@/components/AppPromotion";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
         <FeaturedTrails />
         <CommunitySection />
         <AboutSection />
+        <AppPromotion />
         <Newsletter />
       </main>
       <Footer />
