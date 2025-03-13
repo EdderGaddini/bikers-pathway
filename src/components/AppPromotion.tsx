@@ -83,33 +83,68 @@ const AppPromotion = () => {
           
           <div className="order-1 md:order-2 flex justify-center">
             <div className="relative">
-              {/* 3D-like phone display */}
-              <div className="w-[280px] h-[560px] rounded-[40px] bg-darkBg border-4 border-darkMetal/50 relative overflow-hidden shadow-lg transform rotate-6 perspective-1200 rotate-phone hover:rotate-0 transition-transform duration-700">
+              {/* Phone display with hand clicking */}
+              <div className="w-[300px] h-[580px] rounded-[40px] bg-darkBg border-4 border-darkMetal/50 relative overflow-hidden shadow-lg transform perspective-1200 rotate-3 hover:rotate-0 transition-transform duration-700">
                 <div className="absolute inset-0 opacity-80 bg-gradient-to-br from-darkBg/20 to-transparent"></div>
                 <div className="w-full h-[40px] flex justify-center items-center relative z-10">
                   <div className="w-[120px] h-[24px] rounded-b-[12px] bg-darkBg"></div>
                 </div>
                 <div className="h-full w-full p-4 pt-0 relative z-10">
                   <div className="h-full rounded-[20px] bg-darkBg/50 p-3 overflow-hidden backdrop-blur-sm">
-                    <div className="w-full h-[160px] bg-darkAccent/20 rounded-lg mb-4 flex items-center justify-center">
-                      <div className="relative">
-                        <Settings className="h-16 w-16 text-darkAccent gear-spin" />
-                        <Smartphone className="absolute inset-0 h-16 w-16 text-darkAccent" />
+                    {/* App Store mockup */}
+                    <div className="w-full h-[60px] bg-darkAccent/10 rounded-lg mb-4 flex items-center justify-between px-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-10 h-10 rounded-xl bg-darkAccent/30 flex items-center justify-center">
+                          <Smartphone className="h-6 w-6 text-darkAccent" />
+                        </div>
+                        <div className="text-left">
+                          <div className="text-sm font-semibold text-darkText">Biker's Way</div>
+                          <div className="text-xs text-darkText/60">Rotas & Comunidade</div>
+                        </div>
+                      </div>
+                      <div className="bg-darkAccent text-darkBg text-xs px-3 py-1.5 rounded-full font-medium">
+                        INSTALAR
                       </div>
                     </div>
-                    <div className="w-full h-[40px] bg-darkLeaf/20 rounded mb-4"></div>
-                    <div className="w-full h-[40px] bg-darkMetal/20 rounded mb-4"></div>
-                    <div className="flex gap-2 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-darkAccent/20 flex items-center justify-center">
-                        <RotateCw className="h-5 w-5 text-darkAccent" />
+                    
+                    {/* App screenshots mockup */}
+                    <div className="w-full h-[160px] bg-darkAccent/5 rounded mb-4 p-2">
+                      <div className="grid grid-cols-3 gap-2 h-full">
+                        <div className="bg-darkAccent/10 rounded-lg"></div>
+                        <div className="bg-darkLeaf/10 rounded-lg"></div>
+                        <div className="bg-darkAccent/10 rounded-lg"></div>
                       </div>
-                      <div className="flex-1 h-10 bg-darkMetal/20 rounded"></div>
                     </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      <div className="h-24 bg-darkAccent/10 rounded"></div>
-                      <div className="h-24 bg-darkLeaf/10 rounded"></div>
-                      <div className="h-24 bg-darkLeaf/10 rounded"></div>
-                      <div className="h-24 bg-darkAccent/10 rounded"></div>
+                    
+                    {/* App description mockup */}
+                    <div className="w-full mb-4">
+                      <div className="w-full h-[12px] bg-darkMetal/20 rounded mb-2"></div>
+                      <div className="w-3/4 h-[12px] bg-darkMetal/20 rounded mb-2"></div>
+                      <div className="w-5/6 h-[12px] bg-darkMetal/20 rounded"></div>
+                    </div>
+                    
+                    {/* App reviews mockup */}
+                    <div className="flex items-center gap-1 mb-2">
+                      <div className="flex">
+                        {[1,2,3,4,5].map((_, i) => (
+                          <svg key={i} className="w-3 h-3 text-darkAccent" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                          </svg>
+                        ))}
+                      </div>
+                      <span className="text-xs text-darkText/60">4.9 (10k+)</span>
+                    </div>
+                    
+                    {/* Hand clicking icon */}
+                    <div className="absolute bottom-6 right-0 w-20 h-20 transform translate-x-12 translate-y-4 rotate-[-20deg]">
+                      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-darkText opacity-90">
+                        <path d="M6.5 11.5C6.5 11.5 8.5 9 10 9C11.5 9 13 10.5 13 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        <path d="M11 9L13 10.5L19 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        <path d="M13 19L13 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        <path d="M18 17L18 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        <path d="M21 16L21 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        <path d="M15.5 14V20C15.5 20.5523 15.0523 21 14.5 21H8.5C7.94772 21 7.5 20.5523 7.5 20L7.5 15.5C7.5 14.9477 7.94772 14.5 8.5 14.5L11 14.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      </svg>
                     </div>
                   </div>
                 </div>
