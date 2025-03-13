@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Settings, Compass, Route, MapPin } from "lucide-react";
@@ -8,13 +7,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
   const { t } = useLanguage();
-
-  const scrollToAppDownload = () => {
-    const appSection = document.getElementById("app-download");
-    if (appSection) {
-      appSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <div className="relative overflow-hidden mechanical-bg bg-darkBg">
@@ -52,20 +44,21 @@ const HeroSection = () => {
               Join our community of passionate motorcyclists exploring breathtaking roads, sharing mechanical insights, and connecting with fellow riders who appreciate the perfect balance of engineering and freedom.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/trails">
+              <Link to="/routes">
                 <Button className="bg-darkAccent hover:bg-darkAccent/90 text-darkBg font-semibold text-lg px-8 py-6 flex items-center gap-2">
                   <Route className="h-5 w-5" />
                   {t('exploreRoutes')}
                 </Button>
               </Link>
-              <Button 
-                variant="outline" 
-                className="border-darkText/30 text-darkText hover:bg-darkText/10 text-lg px-8 py-6 flex items-center gap-2"
-                onClick={scrollToAppDownload}
-              >
-                <Settings className="h-5 w-5 gear-spin" />
-                {t('joinCommunity')}
-              </Button>
+              <Link to="/auth">
+                <Button 
+                  variant="outline" 
+                  className="border-darkText/30 text-darkText hover:bg-darkText/10 text-lg px-8 py-6 flex items-center gap-2"
+                >
+                  <Settings className="h-5 w-5 gear-spin" />
+                  {t('joinCommunity')}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
