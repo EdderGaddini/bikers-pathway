@@ -4,20 +4,12 @@
 <head>
   <meta charset="utf-8">
   <title>Biker's Way</title>
-  <script type="text/javascript">
-    // Código para redirecionar para a página principal e preservar a rota
-    var pathSegmentsToKeep = 1;
-    var l = window.location;
-    l.replace(
-      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-      l.hash
-    );
+  <script>
+    // Redirect to the main page with hash routing
+    window.location.href = "/bikers-pathway/#" + window.location.pathname.slice("/bikers-pathway".length);
   </script>
 </head>
 <body>
-  Redirecionando...
+  Redirecting...
 </body>
 </html>

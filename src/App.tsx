@@ -4,7 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "next-themes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
@@ -15,10 +15,8 @@ import Profile from "./pages/Profile";
 
 const queryClient = new QueryClient();
 
-// Verifica se estamos no GitHub Pages
-const isGitHubPages = window.location.hostname.includes('github.io');
-const basename = isGitHubPages ? '/bikers-pathway' : '/';
-
+// Use HashRouter instead of BrowserRouter for GitHub Pages
+// This avoids the need for server-side URL rewriting
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
@@ -26,7 +24,7 @@ const App = () => (
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter basename={basename}>
+          <HashRouter>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/routes" element={<AllRoutes />} />
@@ -36,7 +34,7 @@ const App = () => (
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </TooltipProvider>
       </ThemeProvider>
     </LanguageProvider>
