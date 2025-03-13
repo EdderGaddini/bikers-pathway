@@ -125,3 +125,12 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
+
+/* Community photos hover effects */
+.community-photo:hover .photo-overlay {
+  opacity: 1;
+}
+
+.community-photo:hover img {
+  transform: scale(1.05);
+}
